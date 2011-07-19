@@ -58,18 +58,13 @@ public class FlickrSearchState extends AppState implements FlickrListener {
     private LightPaintApp app;
 
     private ConcurrentLinkedQueue<ImageButton> imageQueue = new ConcurrentLinkedQueue<ImageButton>();
-
     private List<ImageButton> images = new ArrayList<ImageButton>();
-
-    private boolean requestQueryInput;
-    private String status;
-
-    private int gridX, gridY;
 
     private String query;
 
-    public FlickrSearchState() {
-    }
+    private int gridX, gridY;
+
+    private boolean requestQueryInput;
 
     @Override
     public void enter(LightPaintApp app) {
@@ -84,8 +79,8 @@ public class FlickrSearchState extends AppState implements FlickrListener {
         gridX = 200;
         gridY = 60;
         query = null;
-        status = "waiting for user input";
         requestQueryInput = true;
+        setStatus("waiting for user input");
     }
 
     private void executeSearch(String queryTerms) {
@@ -96,22 +91,17 @@ public class FlickrSearchState extends AppState implements FlickrListener {
         flickr = new FlickrSearchProcessor(flickrConfig, params);
         flickr.listeners.addListener(this);
         new Thread(flickr).start();
-        status = "executing flickr search...";
+        setStatus("executing flickr search...");
     }
 
     @Override
     public void flickSearchComplete() {
-        status = "search complete";
+        setStatus("search complete");
     }
 
     @Override
     public void flickSearchFailed(Exception e) {
-        status = "search failed";
-    }
-
-    @Override
-    public String getStatus() {
-        return status;
+        setStatus("search failed");
     }
 
     @Override
@@ -128,7 +118,7 @@ public class FlickrSearchState extends AppState implements FlickrListener {
     public void mouseMoved(LightPaintApp app) {
         Vec2D mousePos = new Vec2D(app.mouseX, app.mouseY);
         for (ImageButton img : images) {
-            img.rollOver(mousePos);
+            img.isRollOver(mousePos);
         }
     }
 
@@ -136,7 +126,7 @@ public class FlickrSearchState extends AppState implements FlickrListener {
     public void mousePressed(LightPaintApp app) {
         Vec2D mousePos = new Vec2D(app.mouseX, app.mouseY);
         for (ImageButton img : images) {
-            if (img.rollOver(mousePos)) {
+            if (img.isRollOver(mousePos)) {
                 app.setSlitScanImage(img.getImage());
             }
         }

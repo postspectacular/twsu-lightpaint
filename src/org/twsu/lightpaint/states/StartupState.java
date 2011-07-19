@@ -36,9 +36,6 @@ import org.twsu.lightpaint.LightPaintApp;
 
 public class StartupState extends AppState {
 
-    public StartupState() {
-    }
-
     @Override
     public String getStatus() {
         return "starting up...";

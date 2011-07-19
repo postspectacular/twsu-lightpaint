@@ -32,6 +32,8 @@
  */
 package org.twsu.lightpaint;
 
+import java.util.logging.Logger;
+
 import org.twsu.lightpaint.config.RenderConfig;
 
 import processing.core.PConstants;
@@ -41,6 +43,9 @@ import processing.core.PImage;
 import toxi.math.MathUtils;
 
 public class TextRenderer {
+
+    protected static final Logger logger = Logger.getLogger(TextRenderer.class
+            .getSimpleName());
 
     private LightPaintApp app;
     private RenderConfig config;
@@ -53,10 +58,9 @@ public class TextRenderer {
     }
 
     public PImage getRenderedText(String txt) {
-        System.out.println(font.getName() + " asc=" + font.ascent() + " desc="
-                + font.descent());
+        logger.info("rendering bitmap msg: " + txt);
         app.textFont(font);
-        int ih = LightPaintApp.config.slitscanner.height;
+        int ih = app.getScanner().getImageHeight();
         float tw = app.textWidth(txt);
         int iw = MathUtils.min((int) tw / 2 + 20, config.maxWidth);
         PGraphics gfx = app.createGraphics(iw, ih, PConstants.JAVA2D);

@@ -69,7 +69,7 @@ public class ImageButton extends Rect {
         return img != null ? img : thumb;
     }
 
-    public boolean rollOver(Vec2D mousePos) {
+    public boolean isRollOver(Vec2D mousePos) {
         return isRollOver = containsPoint(mousePos);
     }
 }

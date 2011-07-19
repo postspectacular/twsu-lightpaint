@@ -39,9 +39,6 @@ import toxi.color.TColor;
 
 public class DiscoveryState extends AppState {
 
-    public DiscoveryState() {
-    }
-
     @Override
     public String getStatus() {
         return "discovering DMX nodes...";

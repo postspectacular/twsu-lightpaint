@@ -151,6 +151,10 @@ public class LightPaintApp extends BaseApp {
         return fontBody;
     }
 
+    public SlitScanner getScanner() {
+        return scanner;
+    }
+
     public AppState getState() {
         return state;
     }

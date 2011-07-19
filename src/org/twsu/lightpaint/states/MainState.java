@@ -44,12 +44,6 @@ public class MainState extends AppState {
     @GUIElement
     public static final String BT_FLICKR = "Flickr search";
 
-    // @GUIElement
-    public static final String BT_SMS = "SMS stream";
-
-    public MainState() {
-    }
-
     @Override
     public String getStatus() {
         return "main state";

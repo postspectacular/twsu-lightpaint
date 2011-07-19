@@ -43,7 +43,10 @@ public abstract class AppState {
     protected static final Logger logger = Logger.getLogger(AppState.class
             .getName());
 
+    protected String status;
+
     public AppState() {
+        setStatus(this.getClass().getName());
     }
 
     public void controlEvent(LightPaintApp app, ControlEvent e) {
@@ -55,7 +58,7 @@ public abstract class AppState {
     }
 
     public String getStatus() {
-        return this.getClass().getName();
+        return status;
     }
 
     public void keyPressed(LightPaintApp app) {
@@ -84,6 +87,10 @@ public abstract class AppState {
 
     public void mouseReleased(LightPaintApp app) {
 
+    }
+
+    protected void setStatus(String s) {
+        this.status = s;
     }
 
     public abstract void transition(LightPaintApp app);

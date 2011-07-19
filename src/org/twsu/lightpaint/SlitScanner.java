@@ -84,6 +84,10 @@ public class SlitScanner implements Runnable {
         return img;
     }
 
+    public int getImageHeight() {
+        return config.height;
+    }
+
     @Override
     public void run() {
         Thread.currentThread().setName("scanner");

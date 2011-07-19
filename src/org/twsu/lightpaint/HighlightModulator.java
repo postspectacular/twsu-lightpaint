@@ -10,10 +10,10 @@ public class HighlightModulator {
     private AbstractWave wave;
     private ReadonlyTColor c1, c2;
 
-    public HighlightModulator(ReadonlyTColor c1, ReadonlyTColor magenta) {
+    public HighlightModulator(ReadonlyTColor c1, ReadonlyTColor c2) {
         this.wave = new SineWave(0, 0.2f, 1f / 3, 2f / 3);
         this.c1 = c1;
-        this.c2 = magenta;
+        this.c2 = c2;
     }
 
     public ReadonlyTColor getOffColor() {

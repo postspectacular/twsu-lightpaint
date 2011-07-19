@@ -48,19 +48,15 @@ import toxi.geom.Vec2D;
 
 public class TwitterSearchState extends AppState {
 
-    private static final int ITEM_HEIGHT = 30;
-
     private static final String TWITTER_URL = "http://search.twitter.com/search.atom?q=%s&rpp=%d";
 
+    private static final int ITEM_HEIGHT = 30;
     private static final int MAX_ITEMS = 25;
 
     private LightPaintApp app;
-
     private List<TextListItem> items = new ArrayList<TextListItem>();
 
     private boolean requestQueryInput;
-
-    private String status;
 
     private String query;
 
@@ -70,7 +66,7 @@ public class TwitterSearchState extends AppState {
         items.clear();
         requestQueryInput = true;
         query = null;
-        status = "waiting for user input...";
+        setStatus("waiting for user input...");
     }
 
     private void executeSearch(String query) {
@@ -87,18 +83,13 @@ public class TwitterSearchState extends AppState {
                     items.add(item);
                     gridY += ITEM_HEIGHT;
                 }
-                status = "search complete: " + items.size() + " results";
+                setStatus("search complete: " + items.size() + " results");
             } else {
-                status = "failed to load twitter search results.";
+                setStatus("failed to load twitter search results.");
             }
         } catch (UnsupportedEncodingException e) {
             logger.warning("error encoding search query");
         }
-    }
-
-    @Override
-    public String getStatus() {
-        return status;
     }
 
     @Override
@@ -142,5 +133,4 @@ public class TwitterSearchState extends AppState {
             }
         }
     }
-
 }
