@@ -1,0 +1,11 @@
+syntax: glob
+
+.DS_Store
+
+bin
+config/appconfig_toxi.xml
+dev
+log/*.log*
+
+*.zip
+*.app

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+	<app bg="000000" border="000000" isPresent="false" fps="30" width="1280"
+		height="720">
+		<mainclass>org.twsu.lightpaint.LightPaintApp</mainclass>
+		<windowLoc y="0" x="0" />
+		<hideMouse>false</hideMouse>
+		<modal>false</modal>
+		<debug>true</debug>
+		<name>TWSU Light Painting</name>
+		<chrome>true</chrome>
+		<timeout>90000</timeout>
+	</app>
+	<artnet pollinterval="6000">
+		<node id="a" ip="2.66.36.8" universe="0" numchannels="480" port="7770" />
+	</artnet>
+	<slitscanner>
+		<height>160</height>
+		<dmxUpdateFPS>200</dmxUpdateFPS>
+	</slitscanner>
+	<flickr>
+		<apikey>YOUR_FLICKR_API_KEY</apikey>
+		<maxImages>50</maxImages>
+	</flickr>
+	<textRenderer>
+		<fontPath>assets/BitstreamVeraSerif-Roman-72.vlw</fontPath>
+		<bgCol>000000</bgCol>
+		<txtCol>ffffff</txtCol>
+	</textRenderer>
+	<ui>
+		<fontBody>assets/BitstreamVeraSerif-Roman-14.vlw</fontBody>
+		<fontHD>assets/LiberationSerif-Italic-36.vlw</fontHD>
+	</ui>
+</config>

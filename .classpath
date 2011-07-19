@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/artnet4j.jar" sourcepath="/artnet4j/src"/>
+	<classpathentry kind="lib" path="lib/core.jar"/>
+	<classpathentry kind="lib" path="lib/jogl/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="lib/jogl/jogl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="twsu-lightpaint/lib/jogl/osx"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jogl/opengl.jar"/>
+	<classpathentry kind="lib" path="lib/colorutils.jar"/>
+	<classpathentry kind="lib" path="lib/datautils.jar"/>
+	<classpathentry kind="lib" path="lib/toxiclibs_p5.jar"/>
+	<classpathentry kind="lib" path="lib/controlP5.jar"/>
+	<classpathentry kind="lib" path="lib/cp5magic.jar"/>
+	<classpathentry kind="lib" path="lib/flickrapi-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/sDrop.jar"/>
+	<classpathentry kind="lib" path="lib/toxiclibscore-0021a.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
